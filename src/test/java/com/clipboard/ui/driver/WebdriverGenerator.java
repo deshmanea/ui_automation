@@ -16,7 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-@Configuration
+@Configuration("com.clipboard.ui")
 public class WebdriverGenerator {
     @Value("${selenium.hub.url}")
     private String seleniumHubUrl;
