@@ -5,5 +5,5 @@
         <classes>
             <class name="com.clipboard.ui.runner.DemoCucumberTestRunner"/>
         </classes>
-    </test> <!-- ui_demo -->
-</suite> <!-- Default Suite -->
+    </test>
+</suite>
