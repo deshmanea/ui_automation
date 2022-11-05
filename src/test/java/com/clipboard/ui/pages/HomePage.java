@@ -1,5 +1,6 @@
 package com.clipboard.ui.pages;
 
+import com.clipboard.ui.models.ShareDetails;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -27,6 +28,9 @@ public class HomePage extends BasePage{
     @Autowired
     private RemoteWebDriver driver;
 
+    @Autowired
+    ShareDetails shareDetails;
+
     @FindBy(how= How.XPATH, using = "//a[@id='nav-hamburger-menu']")
     private WebElement allMenu;
 
@@ -43,6 +47,7 @@ public class HomePage extends BasePage{
         logger.info("Clicking on all menu");
         scrollToElementAndClick(allMenu);
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", allMenu);
+        shareDetails.setParentWindow(driver.getWindowHandle());
         waitForElementToBeVisible(menu_content);
     }
     public void selectTvAppElectronicsMenu() throws InterruptedException {
@@ -54,7 +59,14 @@ public class HomePage extends BasePage{
         logger.info("Waiting for TV, App, Electronics");
         waitForElementToBeClickable(tvAppEleMenuEle);
         tvAppEleMenuEle.click();
+    }
 
+    public synchronized void selectTelevisionMenu() throws InterruptedException {
+        logger.info("Waiting for Television menu");
+        waitForElementToBeVisible(tvMenuEle);
+        waitForElementToBeClickable(tvMenuEle);
+        Thread.sleep(1000);
+        tvMenuEle.click();
     }
 
 

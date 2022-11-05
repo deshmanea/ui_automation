@@ -21,6 +21,7 @@ public abstract class BasePage {
     @Autowired
     private WebDriverWait wait;
 
+
     @PostConstruct
     public void initPage(){
         PageFactory.initElements(driver, this);
