@@ -22,6 +22,7 @@ public class HomePageSteps {
     @Given("^User select \"([^\"]*)\" menu with \"([^\"]*)\" submenu$")
     public synchronized void userSelectMenuWithSubmenu(String mainMenu, String subMenu) throws Throwable {
         homePage.selectAllMenu();
+        homePage.selectTvAppElectronicsMenu();
 
     }
 
