@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+    <test thread-count="2" name="ui_automation" parallel="tests">
+        <classes>
+            <class name="com.clipboard.ui.runner.DemoCucumberTestRunner"/>
+        </classes>
+    </test> <!-- ui_demo -->
+</suite> <!-- Default Suite -->
