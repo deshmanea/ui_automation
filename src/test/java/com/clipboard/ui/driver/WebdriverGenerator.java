@@ -29,21 +29,21 @@ public class WebdriverGenerator {
     @Bean
     @Scope("driverscope")
     public RemoteWebDriver getDriver() throws MalformedURLException {
-        if (testBrowser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
-            driver = new FirefoxDriver(firefoxOptions);
-        } else {
-            System.setProperty("webdriver.gecko.driver", "chromedriver.exe");
-            driver = new ChromeDriver();
+//        if (testBrowser.equalsIgnoreCase("firefox")) {
+//            System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+//            FirefoxOptions firefoxOptions = new FirefoxOptions();
+//            firefoxOptions.setBinary("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+//            driver = new FirefoxDriver(firefoxOptions);
+//        } else {
+//            System.setProperty("webdriver.gecko.driver", "chromedriver.exe");
+//            driver = new ChromeDriver();
+//
+//        }
 
-        }
-
-//        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-//        desiredCapabilities.setCapability("browserName", testBrowser);
-//        desiredCapabilities.setCapability("se:recordVideo","true");
-//        driver = new RemoteWebDriver(new URL(seleniumHubUrl), desiredCapabilities);
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability("browserName", testBrowser);
+        desiredCapabilities.setCapability("se:recordVideo","true");
+        driver = new RemoteWebDriver(new URL(seleniumHubUrl), desiredCapabilities);
 
         return driver;
     }
