@@ -23,12 +23,12 @@ public class HomePageSteps {
     public synchronized void userSelectMenuWithSubmenu(String mainMenu, String subMenu) throws Throwable {
         homePage.selectAllMenu();
         homePage.selectTvAppElectronicsMenu();
-
+        homePage.selectTelevisionMenu();
     }
 
     @When("User filter result with {string} brand")
     public synchronized void userFilterResultWithBrand(String brand) {
-
+        homePage.filterResultWithBrand(brand);
     }
 
 
