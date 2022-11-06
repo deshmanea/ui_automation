@@ -16,7 +16,7 @@
         
  ## Behind the scene
     
-    ![image](https://user-images.githubusercontent.com/71212078/200178341-566bb9c2-ff13-4a54-b8e5-da86bc1f0168.png)
+   ![image](https://user-images.githubusercontent.com/71212078/200178341-566bb9c2-ff13-4a54-b8e5-da86bc1f0168.png)
 
     1 - Docker image "ui_auto_img" will get created/updated (as per cached rule)
     2 - Docker compose file will create "ui_test" network
