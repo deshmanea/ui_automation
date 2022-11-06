@@ -3,12 +3,14 @@ package com.clipboard.ui.pages;
 import com.clipboard.ui.models.ShareDetails;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +29,9 @@ public class HomePage extends BasePage{
 
     @Autowired
     private RemoteWebDriver driver;
+
+    @Autowired
+    private WebDriverWait wait;
 
     @Autowired
     ShareDetails shareDetails;
@@ -55,7 +60,7 @@ public class HomePage extends BasePage{
         waitForElementToBeVisible(menu_content);
         logger.info("Scrolling to Television Main Menu");
         scrollIntoView(tvAppEleMenuEle);
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         logger.info("Waiting for TV, App, Electronics");
         waitForElementToBeClickable(tvAppEleMenuEle);
         tvAppEleMenuEle.click();
@@ -65,10 +70,25 @@ public class HomePage extends BasePage{
         logger.info("Waiting for Television menu");
         waitForElementToBeVisible(tvMenuEle);
         waitForElementToBeClickable(tvMenuEle);
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         tvMenuEle.click();
+    }
+
+    public synchronized void filterResultWithBrand(String brand) {
+        logger.info("Waiting for Brand -> " + brand + " filter");
+        String brandLoc = "//a[@class='a-link-normal' and contains(@href, '" + brand + "')]";
+        waitForPresenceOfMenuWithBrand(brandLoc);
+        WebElement brandEle = getBrandElement(brandLoc);
+        scrollIntoView(brandEle);
+        brandEle.click();
+    }
+
+    private synchronized void waitForPresenceOfMenuWithBrand(String brand){
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(brand)));
     }
 
 
 
-}
+    private synchronized WebElement getBrandElement(String brand){
+        return driver.findElement(By.xpath(brand));
+    }}
