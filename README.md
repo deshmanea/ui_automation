@@ -12,8 +12,9 @@
 Prerequisite : Browser application must be installed in machine
            Compactible version downloaded and pointed correctly
            Set local flag (*application.properties*) true
-Open terminal/cmd and execute below command :
-      >***clean test -Dtestng.suite=testng.xml***
+           
+    Open terminal/cmd and execute below command :
+    > mvn clean test -Dtestng.suite=testng.xml
 
 **Execution with Docker**
 
