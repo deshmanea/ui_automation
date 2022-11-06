@@ -7,21 +7,21 @@
 
 ## Steps to run framework
     
-    ###### Local trigger
-    Prerequisite : Browser application must be installed in machine
-                   Compactible version downloaded and pointed correctly
-                   Set local flag (*application.properties*) true
-    Open terminal/cmd and execute below command
-    > clean test -Dtestng.suite=testng.xml
+ **Local trigger**
+Prerequisite : Browser application must be installed in machine
+               Compactible version downloaded and pointed correctly
+               Set local flag (*application.properties*) true
+Open terminal/cmd and execute below command :
+***clean test -Dtestng.suite=testng.xml***
 
-    ###### Execution with Docker
-    Prerequisite : Docker deamon is running and local flag (*application.properties*) should be set false
-    1 - Local Selenium grid execution
-        Open terminal/command prompt at project location and execute `docker-compose -f docker-compose_local_grid.yml up` command
+###### Execution with Docker
+Prerequisite : Docker deamon is running and local flag (*application.properties*) should be set false
+**1 -** Local Selenium grid execution
+    Open terminal/command prompt at project location and execute `docker-compose -f docker-compose_local_grid.yml up` command
 
-    2 - Dockerized dynamic grid execution 
-        Open terminal/ command prompt run docker-compose -f docker-compose-dynamic-grid.yml up' {Fie must exist under directory}
-        
+**2 -** Dockerized dynamic grid execution 
+    Open terminal/ command prompt run docker-compose -f docker-compose-dynamic-grid.yml up' {Fie must exist under directory}
+
  ## Behind the scene
 
     1 - Docker image "ui_auto_img" will get created/updated (as per cached rule)
