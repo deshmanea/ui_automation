@@ -1,5 +1,6 @@
 package com.clipboard.ui.pages;
 
+import com.clipboard.ui.annotation.PageScope;
 import com.clipboard.ui.models.ShareDetails;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +25,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 
-@Component
+@Lazy
+@PageScope
 public class HomePage extends BasePage {
     private static final Logger logger = LogManager.getLogger();
 
@@ -50,9 +52,6 @@ public class HomePage extends BasePage {
 
     @FindBy(how = How.XPATH, using = "//li/a[contains(@href,'television')]")
     private WebElement tvMenuEle;
-
-//    @FindBy(how = How.XPATH, using = "//a[@data-ref-tag='nav_em_1_9_BT_0_main_menu']")
-//    private WebElement televisionMenuContent;
 
     public void selectAllMenu() {
         logger.info("Clicking on all menu");

@@ -1,5 +1,6 @@
 package com.clipboard.ui.pages;
 
+import com.clipboard.ui.annotation.PageScope;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -10,10 +11,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import javax.annotation.PostConstruct;
 import java.util.Set;
 
+@Lazy
+@PageScope
 public abstract class BasePage {
 
     private static final Logger logger = LogManager.getLogger();

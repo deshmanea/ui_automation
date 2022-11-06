@@ -1,5 +1,6 @@
 package com.clipboard.ui.pages;
 
+import com.clipboard.ui.annotation.PageScope;
 import com.clipboard.ui.models.ShareDetails;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,9 +10,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-@Component
+@Lazy
+@PageScope
 public class ElectronicsPage extends BasePage{
     private static final Logger logger = LogManager.getLogger();
     @Autowired

@@ -14,9 +14,6 @@ public class HomePageSteps {
     private static final Logger logger = LogManager.getLogger();
 
     @Autowired
-    RemoteWebDriver driver;
-
-    @Autowired
     HomePage homePage;
 
     @Given("^User select \"([^\"]*)\" menu with \"([^\"]*)\" submenu$")

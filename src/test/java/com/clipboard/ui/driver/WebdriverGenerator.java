@@ -27,6 +27,7 @@ public class WebdriverGenerator {
     private RemoteWebDriver driver;
 
     @Bean
+    @Scope("driverscope")
     public RemoteWebDriver getDriver() throws MalformedURLException {
         if (testBrowser.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
@@ -49,6 +50,7 @@ public class WebdriverGenerator {
 
     @Lazy
     @Bean
+    @Scope("driverscope")
     public WebDriverWait getExplicitWait(){
         return new WebDriverWait(driver, Duration.ofSeconds(waitTime));
     }
