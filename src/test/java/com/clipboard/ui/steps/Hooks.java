@@ -17,19 +17,19 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class Hooks {
+    private static final Logger logger = LogManager.getLogger();
+
     @Autowired
     private RemoteWebDriver driver;
 
     @Value("${base.url}")
     private String baseurl;
 
-    @Value("${browser}")
-    private String testBrowser;
-
     @Value("${screenshot.path}")
     private String screenshotPath;
 
-    private static final Logger logger = LogManager.getLogger();
+    @Value("${browser}")
+    private String testBrowser;
 
     @Before
     public void intializeTest(Scenario scenario){

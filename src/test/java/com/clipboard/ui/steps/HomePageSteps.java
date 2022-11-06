@@ -12,7 +12,6 @@ import com.clipboard.ui.pages.HomePage;
 
 public class HomePageSteps {
     private static final Logger logger = LogManager.getLogger();
-
     @Autowired
     HomePage homePage;
 
@@ -27,6 +26,5 @@ public class HomePageSteps {
     public synchronized void userFilterResultWithBrand(String brand) {
         homePage.filterResultWithBrand(brand);
     }
-
 
 }

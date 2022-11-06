@@ -18,6 +18,7 @@ import java.time.Duration;
 
 @Configuration("com.clipboard.ui")
 public class WebdriverGenerator {
+
     @Value("${selenium.hub.url}")
     private String seleniumHubUrl;
     @Value("${browser}")
@@ -25,6 +26,7 @@ public class WebdriverGenerator {
     @Value("${wait.time}")
     private int waitTime;
     private RemoteWebDriver driver;
+
 
     @Bean
     @Scope("driverscope")
@@ -48,7 +50,6 @@ public class WebdriverGenerator {
         return driver;
     }
 
-    @Lazy
     @Bean
     @Scope("driverscope")
     public WebDriverWait getExplicitWait(){

@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
 public class ElectronicsPageSteps {
-
     private static final Logger logger = LogManager.getLogger();
     @Autowired
     ElectronicsPage electronicsPage;
@@ -25,7 +24,6 @@ public class ElectronicsPageSteps {
         electronicsPage.switchToNewlyOpenedTab();
         String productDetails = electronicsPage.getAboutThisItemText();
         logger.info(productDetails);
-        Assert.assertTrue(productDetails.toLowerCase().contains(details.toLowerCase()));
-
+        Assert.assertTrue(productDetails.toLowerCase().contains("about this item"));
     }
 }

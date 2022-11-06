@@ -29,7 +29,7 @@ services:
       - ui_test
 
   ui_automation:
-    image: ui_demo
+    image: ui_auto_img
     container_name: uitestcon
     build:
       context: .
