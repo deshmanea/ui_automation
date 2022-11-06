@@ -18,6 +18,7 @@ Open terminal/cmd and execute below command :
 **Execution with Docker**
 
 Prerequisite : Docker deamon is running and local flag (*application.properties*) should be set false
+
 **1 -** Local Selenium grid execution
     Open terminal/command prompt at project location and execute `docker-compose -f docker-compose_local_grid.yml up` command
 
