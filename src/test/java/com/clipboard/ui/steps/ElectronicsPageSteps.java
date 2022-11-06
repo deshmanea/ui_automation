@@ -22,6 +22,10 @@ public class ElectronicsPageSteps {
 
     @Then("User should be able to see {string}")
     public synchronized void userShouldBeAbleToSee(String details) {
+        electronicsPage.switchToNewlyOpenedTab();
+        String productDetails = electronicsPage.getAboutThisItemText();
+        logger.info(productDetails);
+        Assert.assertTrue(productDetails.toLowerCase().contains(details.toLowerCase()));
 
     }
 }

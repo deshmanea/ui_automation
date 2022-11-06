@@ -61,4 +61,9 @@ public class ElectronicsPage extends BasePage{
         return aboutThisItem.getText();
     }
 
+    public void switchToNewlyOpenedTab() {
+        switchToTab(shareDetails.getParentWindow(), driver.getWindowHandles());
+        waitForElementToBeVisible(productTitleEle);
+    }
+
 }

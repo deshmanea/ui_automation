@@ -60,7 +60,7 @@ public class HomePage extends BasePage{
         waitForElementToBeVisible(menu_content);
         logger.info("Scrolling to Television Main Menu");
         scrollIntoView(tvAppEleMenuEle);
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
         logger.info("Waiting for TV, App, Electronics");
         waitForElementToBeClickable(tvAppEleMenuEle);
         tvAppEleMenuEle.click();
@@ -70,7 +70,7 @@ public class HomePage extends BasePage{
         logger.info("Waiting for Television menu");
         waitForElementToBeVisible(tvMenuEle);
         waitForElementToBeClickable(tvMenuEle);
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
         tvMenuEle.click();
     }
 
@@ -86,8 +86,6 @@ public class HomePage extends BasePage{
     private synchronized void waitForPresenceOfMenuWithBrand(String brand){
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(brand)));
     }
-
-
 
     private synchronized WebElement getBrandElement(String brand){
         return driver.findElement(By.xpath(brand));

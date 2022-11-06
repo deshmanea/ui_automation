@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import java.util.Set;
 
 public abstract class BasePage {
 
@@ -59,6 +60,17 @@ public abstract class BasePage {
     public synchronized void waitForSpinnerToGetDisappear(WebElement element){
         logger.info("Waiting for Spinner to disappear");
         wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
+    public synchronized void switchToTab(String parentWindow, Set<String> tabs) {
+        logger.info("Switching to tab");
+        for (String tab: tabs) {
+            if (!parentWindow.contentEquals(tab)){
+                driver.switchTo().window(tab);
+                logger.info("Switched to tab " + tab);
+                break;
+            }
+        }
     }
 
 }

@@ -4,4 +4,4 @@ Feature: Product details validation
    Given User select "TV, Appliances, Electronics" menu with "Television" submenu
    When User filter result with "Samsung" brand
    And Filter result by price high to low, select "2" result
-#   Then User should be able to see "About this item"
+   Then User should be able to see "About this item"
