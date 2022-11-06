@@ -12,5 +12,5 @@
         Open terminal/command prompt at project location and execute `docker-compose -f docker-compose_local_grid.yml up` command
 
     2 - Dockerized dynamic grid execution 
-        a - Open terminal/ command prompt run 'docker build -t ui_auto_img .' {DockerFie must exist under directory}
-        b - 
+        Open terminal/ command prompt run docker-compose -f docker-compose-dynamic-grid.yml up' {Fie must exist under directory}
+        
