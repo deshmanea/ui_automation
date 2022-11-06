@@ -45,7 +45,7 @@ public abstract class BasePage {
         for (String tab: tabs) {
             if (!parentWindow.contentEquals(tab)){
                 driver.switchTo().window(tab);
-                logger.info("Switched to tab " + tab);
+                logger.info("Switched to tab : " + tab + " from original tab : " + parentWindow);
                 break;
             }
         }
@@ -59,6 +59,11 @@ public abstract class BasePage {
     public synchronized void waitForElementToBeVisible(WebElement element){
         logger.info("Waiting for element");
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public synchronized void waitForElementToBeVisible(By locator){
+        logger.info("Waiting for element");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public synchronized void waitForPresenceOfElement(By locator){
