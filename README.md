@@ -20,9 +20,9 @@
 
     1 - Docker image "ui_auto_img" will get created/updated (as per cached rule)
     2 - Docker compose file will create "ui_test" network
-    ![image](https://user-images.githubusercontent.com/71212078/200178518-65f65422-984c-44da-bbad-7c5c93a5674f.png)
+ ![image](https://user-images.githubusercontent.com/71212078/200178518-65f65422-984c-44da-bbad-7c5c93a5674f.png)
     3 - As per demand test container will get get created and as video recording is enabled it's separate one on one mapped container get up
-    ![image](https://user-images.githubusercontent.com/71212078/200178621-d2f06fb1-6a7e-4f95-8fe2-95cc7d4c77cc.png)
+   ![image](https://user-images.githubusercontent.com/71212078/200178621-d2f06fb1-6a7e-4f95-8fe2-95cc7d4c77cc.png)
     4 - Post execution test and video containers will get removed 
     ![image](https://user-images.githubusercontent.com/71212078/200178668-185c6211-fd42-41d2-b83f-3150b84b6376.png)
     5 - Video recording get transfered to configured local machine path
