@@ -35,7 +35,6 @@ public class HomePage extends BasePage{
     @FindBy(how= How.XPATH, using = "//a[@id='nav-hamburger-menu']")
     private WebElement allMenu;
 
-    //    @FindBy(how = How.ID, using = "hmenu-content")
     @FindBy(how = How.XPATH, using = "//div[@id='hmenu-content']/ul[@class='hmenu hmenu-visible']")
     private WebElement menu_content;
 
@@ -44,9 +43,6 @@ public class HomePage extends BasePage{
 
     @FindBy(how = How.XPATH, using = "//li/a[contains(@href,'television')]")
     private WebElement tvMenuEle;
-
-//    @FindBy(how = How.XPATH, using = "//a[@data-ref-tag='nav_em_1_9_BT_0_main_menu']")
-//    private WebElement televisionMenuContent;
 
     public void selectAllMenu(){
         logger.info("Clicking on all menu");

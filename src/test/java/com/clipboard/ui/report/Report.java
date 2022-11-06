@@ -31,7 +31,6 @@ public class Report {
         File reportOutDirectory = new File(reportOutDirectoryPath);
         List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add(jsonFilePath);
-
         Configuration configuration = new Configuration(reportOutDirectory, projectName);
         ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
         reportBuilder.generateReports();

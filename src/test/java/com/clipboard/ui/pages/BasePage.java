@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 
 import javax.annotation.PostConstruct;
 import java.util.Set;
@@ -25,7 +26,6 @@ public abstract class BasePage {
     private RemoteWebDriver driver;
     @Autowired
     private WebDriverWait wait;
-
     @PostConstruct
     public void initPage(){
         PageFactory.initElements(driver, this);
@@ -36,25 +36,19 @@ public abstract class BasePage {
         scrollIntoView(element);
         waitForElementToBeVisible(element);
         waitForElementToBeClickable(element);
-
         element.click();
     }
 
     public synchronized void switchToTab(String parentWindow, Set<String> tabs) {
-        logger.info("Switching to tab");
         for (String tab: tabs) {
             if (!parentWindow.contentEquals(tab)){
                 driver.switchTo().window(tab);
                 logger.info("Switched to tab : " + tab + " from original tab : " + parentWindow);
+                logger.info("Page title : " + driver.getTitle());
                 break;
             }
         }
     }
-
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size() > 0;
-    }
-
 
     public synchronized void waitForElementToBeVisible(WebElement element){
         logger.info("Waiting for element");

@@ -11,6 +11,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
 @Lazy
 @PageScope
 public class ElectronicsPage extends BasePage{
@@ -64,8 +69,9 @@ public class ElectronicsPage extends BasePage{
         return aboutThisItem.getText();
     }
 
-    public void switchToNewlyOpenedTab() {
-        switchToTab(shareDetails.getParentWindow(), driver.getWindowHandles());
+    public synchronized void switchToNewlyOpenedTab() {
+        Set<String> winHandle = Collections.synchronizedSet(new HashSet<>(driver.getWindowHandles()));
+        switchToTab(shareDetails.getParentWindow(),winHandle);
         waitForElementToBeVisible(productTitleEle);
     }
 }
