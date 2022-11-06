@@ -55,4 +55,10 @@ public abstract class BasePage {
         logger.info("Using driver session for scroll : " + driver.getSessionId());
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(" + scrollIntoViewOptions + ")", element);
     }
+
+    public synchronized void waitForSpinnerToGetDisappear(WebElement element){
+        logger.info("Waiting for Spinner to disappear");
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+
 }
