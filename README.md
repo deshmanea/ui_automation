@@ -31,7 +31,8 @@
 
     5 - Video recording get transfered to configured local machine path
    ![image](https://user-images.githubusercontent.com/71212078/200178766-72b628a1-5efd-45f7-9196-57492b283441.png)
-    https://user-images.githubusercontent.com/71212078/200190501-43768f4e-501b-4148-bf67-ee98b62d6ab6.mp4
+   
+   https://user-images.githubusercontent.com/71212078/200190501-43768f4e-501b-4148-bf67-ee98b62d6ab6.mp4
    
    
     6 - Bring down network using Ctrl+C, and then `docker-compose -f docker-compose-dynamic-grid.yml down`
